@@ -25,6 +25,22 @@ CREATE TABLE IF NOT EXISTS candidates (
 )
 ''')
 
+cursor.execute('''
+        CREATE TABLE IF NOT EXISTS caller_ice_candidates (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            room_id TEXT NOT NULL,
+            candidate TEXT NOT NULL
+        )
+    ''')
+
+cursor.execute('''
+        CREATE TABLE IF NOT EXISTS callee_ice_candidates (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            room_id TEXT NOT NULL,
+            candidate TEXT NOT NULL
+        )
+    ''')
+
 # Confirmar a criação das tabelas
 conn.commit()
 
